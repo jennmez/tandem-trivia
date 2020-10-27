@@ -1,12 +1,18 @@
-# Dependencies added via NPM
+# Proxy server for local development
 
-[concurrently](https://www.npmjs.com/package/concurrently) - to run the express server and react client simultaneously
-[express](https://expressjs.com/) - set up express server & REST API routes
-[nodemon](https://nodemon.io/) - utility to monitor for changes in source & restart server automatically
+The package.json is set up with a proxy server to so webpack's dev server can connect the express server. Please note, if the port is changed in server.js, the port must also be changed in package.json "proxy".
 
-# Getting Started with Create React App
+# Getting Started with Tandem Trivia
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For a demo of Tandem Trivia, you can visit DEPLOYED SITE.
+
+## Dependencies Added With NPM
+
+- This project was bootstrapped with [Create React App](https://github.com/- facebook/create-react-app).
+- [concurrently](https://www.npmjs.com/package/concurrently) - to run the express server and react client simultaneously
+- [express](https://expressjs.com/) - set up express server & REST API routes
+- [nodemon](https://nodemon.io/) - utility to monitor for changes in source & restart server automatically
+- [axios](https://www.npmjs.com/package/axios)
 
 ## Available Scripts
 
@@ -14,7 +20,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app and server concurrently in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
