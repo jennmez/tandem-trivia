@@ -1,3 +1,9 @@
+# Dependencies added via NPM
+
+[concurrently](https://www.npmjs.com/package/concurrently) - to run the express server and react client simultaneously
+[express](https://expressjs.com/) - set up express server & REST API routes
+[nodemon](https://nodemon.io/) - utility to monitor for changes in source & restart server automatically
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
