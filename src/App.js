@@ -3,7 +3,7 @@ import axios from 'axios';
 
 //components and helpers
 import Trivia from './Trivia.js';
-import shuffle from './utils';
+import shuffle, { addKey } from './utils';
 
 //material UI styling
 import Grid from '@material-ui/core/Grid';
@@ -25,6 +25,7 @@ function App() {
         const response = await axios.get('/api');
         const { data } = await response;
         shuffle(data);
+        addKey(data);
         setAllQuestions(data);
         console.log('trivia', allQuestions);
       } catch (err) {
@@ -37,29 +38,16 @@ function App() {
   //change the state when the player decides to play the game
   const playGame = () => {
     let triviaRoundQuestions = allQuestions.slice(0, 10);
-    // getTriviaRound(triviaRoundQuestions);
     setTriviaRound(triviaRoundQuestions);
     setIsPlaying(true);
-    // setTriviaRound(triviaRoundQuestions);
   };
 
   //uses the custom styling created
   const classes = useStyles();
 
   //
-  // const getTriviaRound = async (questions) => {
-  //   let answers = [];
-  //   await questions.forEach((question) => {
-  //     let answersArray = question.incorrect_answers;
-  //     answersArray.push(question.correct_answer);
-  //     const randomizedAnswers = shuffle(answersArray);
-  //     answers.push(randomizedAnswers);
-  //   });
-  //   setAnswers(answers);
-  // };
 
   return (
-    // <Container>
     <>
       {!isPlaying ? (
         <div className={classes.root}>
