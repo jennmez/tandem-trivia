@@ -13,6 +13,7 @@ For a demo of Tandem Trivia, you can visit DEPLOYED SITE.
 - [express](https://expressjs.com/) - set up express server & REST API routes
 - [nodemon](https://nodemon.io/) - utility to monitor for changes in source & restart server automatically
 - [axios](https://www.npmjs.com/package/axios)
+- [Material UI](https://material-ui.com/) for styling purposes
 
 ## Available Scripts
 
