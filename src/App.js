@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
 import axios from 'axios';
+
+//components and helpers
 import Trivia from './Trivia.js';
+import shuffle from './utils';
 
 //material UI styling
-import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
 function App() {
-  const [questions, setQuestions] = useState([]);
+  const [allQuestions, setAllQuestions] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
+  // const [score, setScore] = useState(0);
+  // const [answers, setAnswers] = useState([]);
+  const [triviaRound, setTriviaRound] = useState([]);
 
-  //on the page load, it grab
+  //grabs all Questions from the server
   useEffect(() => {
     async function fetchTrivia() {
       try {
         const response = await axios.get('/api');
         const { data } = await response;
-        setQuestions(data);
-        console.log('trivia', questions);
+        shuffle(data);
+        setAllQuestions(data);
+        console.log('trivia', allQuestions);
       } catch (err) {
         console.log(err);
       }
@@ -29,12 +34,29 @@ function App() {
     fetchTrivia();
   }, []);
 
+  //change the state when the player decides to play the game
   const playGame = () => {
+    let triviaRoundQuestions = allQuestions.slice(0, 10);
+    // getTriviaRound(triviaRoundQuestions);
+    setTriviaRound(triviaRoundQuestions);
     setIsPlaying(true);
+    // setTriviaRound(triviaRoundQuestions);
   };
 
-  //uses the custom syling created
+  //uses the custom styling created
   const classes = useStyles();
+
+  //
+  // const getTriviaRound = async (questions) => {
+  //   let answers = [];
+  //   await questions.forEach((question) => {
+  //     let answersArray = question.incorrect_answers;
+  //     answersArray.push(question.correct_answer);
+  //     const randomizedAnswers = shuffle(answersArray);
+  //     answers.push(randomizedAnswers);
+  //   });
+  //   setAnswers(answers);
+  // };
 
   return (
     // <Container>
@@ -56,8 +78,8 @@ function App() {
             <Grid item xs={12}>
               <Typography variant="body1" className={classes.type}>
                 Are you ready to shine at your next trivia night in?! Test your
-                knowledge, 10 questions at a time, & get ready to impress your
-                friends!
+                knowledge, 10 allQuestions at a time, & get ready to impress
+                your friends!
               </Typography>
             </Grid>
             <Grid item xs={12} className={classes.type}>
@@ -82,7 +104,7 @@ function App() {
               </Typography>
             </Grid>
             <Grid item xs={12} className={classes.type}>
-              <Trivia questions={questions} />
+              <Trivia triviaQs={triviaRound} />
             </Grid>
           </Grid>
         </div>
@@ -93,7 +115,7 @@ function App() {
 
 export default App;
 
-//custom styling
+//custom styling for page
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,

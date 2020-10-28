@@ -1,12 +1,16 @@
 import React from 'react';
+import TriviaCard from './TriviaCard';
 
 function Trivia(props) {
+  let triviaQs = props.triviaQs;
   return (
     <>
       <div>
         <ul>
-          {props.questions.map((question, idx) => (
-            <li key={idx}>{question.question}</li>
+          {triviaQs.map((question, idx) => (
+            <li key={idx}>
+              <TriviaCard triviaQ={question} />
+            </li>
           ))}
         </ul>
       </div>
