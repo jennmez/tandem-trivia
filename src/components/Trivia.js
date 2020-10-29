@@ -10,21 +10,28 @@ function Trivia(props) {
       setCountCard(countCard);
     };
 
-  console.log(triviaQs);
-
   const listItems = triviaQs.map((question) => (
     <TriviaCard
       key={question.id}
+      id={question.id}
       triviaQ={question}
       nextQuestion={nextQuestion}
     />
   ));
 
-  return (
-    <>
-      <div>{listItems[countCard]}</div>
-    </>
-  );
+  if (countCard === 10) {
+    return (
+      <>
+        <div>Play Again!</div>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <div>{listItems[countCard]}</div>
+      </>
+    );
+  }
 }
 
 export default Trivia;

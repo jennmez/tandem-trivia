@@ -3,7 +3,7 @@ import axios from 'axios';
 
 //components and helpers
 import Trivia from './Trivia.js';
-import shuffle, { addKey } from './utils';
+import shuffle, { addKey } from '../utils';
 
 //material UI styling
 import Grid from '@material-ui/core/Grid';
