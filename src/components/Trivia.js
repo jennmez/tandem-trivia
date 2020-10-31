@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TriviaCard from './TriviaCard';
+import Score from './Score';
 
 export default function Trivia(props) {
   let triviaQs = props.triviaQs;
@@ -36,7 +37,7 @@ export default function Trivia(props) {
     <>
       {countCard === 10 ? (
         //show play again screen with score
-        <div>Play Again!</div>
+        <Score score={score} />
       ) : (
         <div>{listItems[countCard]}</div>
       )}
