@@ -12,10 +12,10 @@ export default function shuffle(array) {
   return array;
 }
 
-export function addKey(questionsArray) {
+export function addKey(array) {
   let value = 1;
-  questionsArray.forEach((question) => {
-    question.id = value;
+  array.forEach((item) => {
+    item.id = value;
     value++;
   });
 }
