@@ -7,8 +7,6 @@ import Trivia from './Trivia.js';
 import ErrorPg from './ErrorPg.js';
 import shuffle, { addKey } from '../utils';
 
-//
-
 function App() {
   const [questions, setQuestions] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -17,10 +15,8 @@ function App() {
 
   const fetchTrivia = async () => {
     try {
-      console.log('im in the fetch');
       setIsLoading(true);
       const response = await axios.get('/api');
-      console.log('client found data');
       const { data } = await response;
       shuffle(data);
       addKey(data);
@@ -30,6 +26,7 @@ function App() {
       setIsPlaying(true);
     } catch (error) {
       console.log(error);
+      setIsLoading(false);
       setError(error);
     }
   };
