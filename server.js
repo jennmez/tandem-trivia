@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 //configure router so routes are prefixed with /api
 app.use('/api', router);
 
-app.get('*', function (req, res) {
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
@@ -35,13 +35,6 @@ router.get('/', (req, res, next) => {
       next(err);
     }
   );
-});
-
-//404 error handling
-app.use((req, res, next) => {
-  const error = new Error('Not Found');
-  error.status = 404;
-  next(error);
 });
 
 //configure error handling middleware last
