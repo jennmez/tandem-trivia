@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3030;
 const path = require('path');
 
 // //static files
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '../build')));
 
 //use the express Router object to create our route
 // let router = express.Router();
@@ -21,8 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api', require('./api'));
 
 if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build', 'index.html'));
   });
   // app.get('/', (req, res) => {
   //   res.sendFile('build/index.html', { root: __dirname });
