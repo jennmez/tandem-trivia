@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
-export default function Trivia({ triviaQs, playGame }) {
+export default function Trivia({ triviaQs, resetGame }) {
   let [countCard, setCountCard] = useState(0);
   let [score, setScore] = useState(0);
 
@@ -42,7 +42,7 @@ export default function Trivia({ triviaQs, playGame }) {
         <Grid
           container
           direction="row"
-          // justify="center"
+          justify="center"
           alignItems="center"
           className={classes.grid}
         >
@@ -55,7 +55,7 @@ export default function Trivia({ triviaQs, playGame }) {
             <Score score={score} />
           </Grid>
           <Grid item xs={12}>
-            <Button variant="outlined" color="primary" onClick={playGame}>
+            <Button variant="outlined" color="primary" onClick={resetGame}>
               PLAY AGAIN
             </Button>
           </Grid>

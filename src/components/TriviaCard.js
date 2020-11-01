@@ -14,7 +14,6 @@ import Button from '@material-ui/core/Button';
 export default function TriviaCard(props) {
   let trivia = props.triviaQ;
   let { addToScore, nextQuestion } = props;
-  console.log(addToScore);
 
   const classes = useStyles();
   const [value, setValue] = useState('');
@@ -46,7 +45,6 @@ export default function TriviaCard(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(value);
     if (value === trivia.correct) {
       setDisableSubmitButton(!disabledSubmitButton);
       setDisableNextButton(!disabledNextButton);
