@@ -55,7 +55,12 @@ export default function Welcome({ playGame }) {
               </Typography>
             </Grid>
             <Grid item xs={12} className={classes.type}>
-              <Button variant="outlined" color="primary" onClick={playGame}>
+              <Button
+                variant="outlined"
+                color="primary"
+                onClick={playGame}
+                className={classes.button}
+              >
                 PLAY
               </Button>
             </Grid>
@@ -72,11 +77,12 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   grid: {
-    minHeight: '100vh',
+    minHeight: '50vh',
+    marginTop: theme.spacing(5),
   },
   type: {
-    fontSize: '1.15em',
-    padding: theme.spacing(5),
+    fontSize: '1.25em',
+    padding: theme.spacing(3),
     textAlign: 'center',
   },
   header: {
@@ -89,5 +95,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
     marginLeft: 'auto',
     marginRight: 'auto',
+  },
+  button: {
+    margin: theme.spacing(1, 1, 0, 0),
   },
 }));

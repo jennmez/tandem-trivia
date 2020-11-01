@@ -39,29 +39,56 @@ export default function Trivia({ triviaQs, resetGame }) {
     <>
       {countCard === 10 ? (
         //show play again screen with score
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="center"
-          className={classes.grid}
-        >
-          <Grid item xs={12}>
-            <Typography variant="h3" color="primary" className={classes.header}>
-              Impress Me, Human
-            </Typography>
+        <Container maxWidth="md">
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+            className={classes.grid}
+          >
+            <Grid item xs={12}>
+              <Typography
+                variant="h3"
+                color="primary"
+                className={classes.header}
+              >
+                Impress Me, Human
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Score score={score} />
+            </Grid>
+            <Grid item xs={12} className={classes.type}>
+              <Button variant="outlined" color="primary" onClick={resetGame}>
+                PLAY AGAIN
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item xs={12}>
-            <Score score={score} />
-          </Grid>
-          <Grid item xs={12}>
-            <Button variant="outlined" color="primary" onClick={resetGame}>
-              PLAY AGAIN
-            </Button>
-          </Grid>
-        </Grid>
+        </Container>
       ) : (
-        <div>{listItems[countCard]}</div>
+        <Container maxWidth="md">
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+            className={classes.grid}
+          >
+            <Grid item xs={12}>
+              <Typography
+                variant="h3"
+                color="primary"
+                className={classes.header}
+              >
+                Impress Me, Human
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              {listItems[countCard]}
+            </Grid>
+          </Grid>
+        </Container>
       )}
     </>
   );
@@ -73,10 +100,14 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   grid: {
-    minHeight: '100vh',
+    minHeight: '50vh',
   },
   header: {
     textTransform: 'uppercase',
+    textAlign: 'center',
+    padding: theme.spacing(2),
+  },
+  type: {
     textAlign: 'center',
   },
 }));

@@ -10,6 +10,8 @@ import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
+import { Typography } from '@material-ui/core';
 
 export default function TriviaCard(props) {
   let trivia = props.triviaQ;
@@ -64,70 +66,75 @@ export default function TriviaCard(props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <FormControl
-          component="fieldset"
-          error={error}
-          className={classes.formControl}
-        >
-          <FormLabel component="legend">{trivia.question}</FormLabel>
-          <RadioGroup
-            aria-label="quiz"
-            name="quiz"
-            value={value}
-            onChange={handleRadioChange}
+      <Container className={classes.container}>
+        <form onSubmit={handleSubmit}>
+          <Typography variant="h5" color="secondary" className={classes.header}>
+            Question {trivia.id}
+          </Typography>
+          <FormControl
+            component="fieldset"
+            error={error}
+            className={classes.formControl}
           >
-            {answers.map((answer, idx) => (
-              <FormControlLabel
-                key={idx}
-                value={answer}
-                control={<Radio />}
-                label={answer}
-              />
-            ))}
-          </RadioGroup>
-          <FormHelperText>{helperText}</FormHelperText>
-          {!disabledSubmitButton ? (
-            <Button
-              type="submit"
-              variant="outlined"
-              color="primary"
-              className={classes.button}
+            <FormLabel component="legend">{trivia.question}</FormLabel>
+            <RadioGroup
+              aria-label="quiz"
+              name="quiz"
+              value={value}
+              onChange={handleRadioChange}
             >
-              Submit Answer
-            </Button>
-          ) : (
-            <Button
-              type="submit"
-              variant="outlined"
-              color="primary"
-              className={classes.button}
-              disabled
-            >
-              Submit Answer
-            </Button>
-          )}
-        </FormControl>
-      </form>
-      {disabledNextButton ? (
-        <Button
-          variant="outlined"
-          color="primary"
-          className={classes.button}
-          disabled
-        >
-          Next Question
-        </Button>
-      ) : (
-        <Button
-          variant="outlined"
-          color="primary"
-          className={classes.button}
-          onClick={nextQuestion}
-        >
-          Next Question
-        </Button>
-      )}
+              {answers.map((answer, idx) => (
+                <FormControlLabel
+                  key={idx}
+                  value={answer}
+                  control={<Radio />}
+                  label={answer}
+                />
+              ))}
+            </RadioGroup>
+            <FormHelperText>{helperText}</FormHelperText>
+            {!disabledSubmitButton ? (
+              <Button
+                type="submit"
+                variant="outlined"
+                color="primary"
+                className={classes.button}
+              >
+                Submit Answer
+              </Button>
+            ) : (
+              <Button
+                type="submit"
+                variant="outlined"
+                color="primary"
+                className={classes.button}
+                disabled
+              >
+                Submit Answer
+              </Button>
+            )}
+            {disabledNextButton ? (
+              <Button
+                variant="outlined"
+                color="primary"
+                className={classes.button}
+                disabled
+              >
+                Next Question
+              </Button>
+            ) : (
+              <Button
+                variant="outlined"
+                color="primary"
+                className={classes.button}
+                onClick={nextQuestion}
+              >
+                Next Question
+              </Button>
+            )}
+          </FormControl>
+        </form>
+      </Container>
     </>
   );
 }
@@ -138,5 +145,16 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: theme.spacing(1, 1, 0, 0),
+  },
+  container: {
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  header: {
+    textTransform: 'uppercase',
+    paddingLeft: theme.spacing(3),
+    paddingTop: theme.spacing(2),
+    // textAlign: 'center',
   },
 }));
