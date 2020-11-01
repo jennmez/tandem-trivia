@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/tandem-trivia/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/tandem-trivia/static/js/main.84f842c9.chunk.js",
+    "main.js.map": "/tandem-trivia/static/js/main.84f842c9.chunk.js.map",
+    "runtime-main.js": "/tandem-trivia/static/js/runtime-main.06c83b59.js",
+    "runtime-main.js.map": "/tandem-trivia/static/js/runtime-main.06c83b59.js.map",
+    "static/js/2.63038464.chunk.js": "/tandem-trivia/static/js/2.63038464.chunk.js",
+    "static/js/2.63038464.chunk.js.map": "/tandem-trivia/static/js/2.63038464.chunk.js.map",
+    "static/js/3.4ba57b16.chunk.js": "/tandem-trivia/static/js/3.4ba57b16.chunk.js",
+    "static/js/3.4ba57b16.chunk.js.map": "/tandem-trivia/static/js/3.4ba57b16.chunk.js.map",
+    "index.html": "/tandem-trivia/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/tandem-trivia/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.63038464.chunk.js.LICENSE.txt": "/tandem-trivia/static/js/2.63038464.chunk.js.LICENSE.txt",
+    "static/media/gc_belly.321f3c6c.svg": "/tandem-trivia/static/media/gc_belly.321f3c6c.svg",
+    "static/media/gc_branch.bc291c93.svg": "/tandem-trivia/static/media/gc_branch.bc291c93.svg",
+    "static/media/gc_dinner.6d732328.svg": "/tandem-trivia/static/media/gc_dinner.6d732328.svg",
+    "static/media/gc_love.2f1b4943.svg": "/tandem-trivia/static/media/gc_love.2f1b4943.svg",
+    "static/media/gc_nap.dabb1344.svg": "/tandem-trivia/static/media/gc_nap.dabb1344.svg",
+    "static/media/gc_sit.03a5519a.svg": "/tandem-trivia/static/media/gc_sit.03a5519a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.06c83b59.js",
+    "static/js/2.63038464.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.84f842c9.chunk.js"
+  ]
+}
