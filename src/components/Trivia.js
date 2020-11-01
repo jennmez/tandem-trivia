@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import TriviaCard from './TriviaCard';
 import Score from './Score';
 
-export default function Trivia(props) {
-  let triviaQs = props.triviaQs;
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 
+export default function Trivia({ triviaQs, playGame }) {
   let [countCard, setCountCard] = useState(0);
   let [score, setScore] = useState(0);
 
@@ -12,14 +16,11 @@ export default function Trivia(props) {
   const nextQuestion = () => {
     countCard += 1;
     setCountCard(countCard);
-    console.log('after', countCard);
   };
 
   const addToScore = () => {
     score += 1;
-    console.log('score b4', score);
     setScore(score);
-    console.log('score after', score);
   };
 
   //makes a Trivia card child component for each question
@@ -33,14 +34,49 @@ export default function Trivia(props) {
     />
   ));
 
+  const classes = useStyles();
   return (
     <>
       {countCard === 10 ? (
         //show play again screen with score
-        <Score score={score} />
+        <Grid
+          container
+          direction="row"
+          // justify="center"
+          alignItems="center"
+          className={classes.grid}
+        >
+          <Grid item xs={12}>
+            <Typography variant="h3" color="primary" className={classes.header}>
+              Impress Me, Human
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Score score={score} />
+          </Grid>
+          <Grid item xs={12}>
+            <Button variant="outlined" color="primary" onClick={playGame}>
+              PLAY AGAIN
+            </Button>
+          </Grid>
+        </Grid>
       ) : (
         <div>{listItems[countCard]}</div>
       )}
     </>
   );
 }
+
+//custom styling for page
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  grid: {
+    minHeight: '100vh',
+  },
+  header: {
+    textTransform: 'uppercase',
+    textAlign: 'center',
+  },
+}));

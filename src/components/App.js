@@ -43,7 +43,7 @@ function App() {
       {!isPlaying && !error ? (
         <Welcome playGame={playGame} />
       ) : (
-        <Trivia triviaQs={triviaRound} />
+        <Trivia triviaQs={triviaRound} playGame={playGame} />
       )}
       {error && <ErrorPg />}
     </>

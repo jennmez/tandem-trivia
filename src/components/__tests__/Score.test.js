@@ -8,30 +8,45 @@ describe('Score', () => {
     render(<Score />);
   });
 
-  test(`renders the player's score`, () => {
+  test(`correctly renders the player's score`, () => {
     let score = 8;
     render(<Score score={score} />);
 
     screen.getByRole('heading');
 
     expect(screen.getByRole('heading')).toHaveTextContent(
-      'You got 8 questions correct.'
+      '8 questions correct'
     );
   });
 
-  test('renders correct img for highest score', () => {
+  test('renders correct Grumpy message', () => {
     render(<Score score={10} />);
 
-    screen.getByAltText(/grumpy_love/i);
+    screen.getByText(/you'll do./i);
 
-    expect(screen.getByAltText(/grumpy_love/i)).toBeInTheDocument();
+    expect(screen.getByText(/you'll do./i)).toBeInTheDocument();
+
+    // I thought I could use the .not matcher before toBeInTheDoc() to show that the other messages are not appearing, but the couple ways I've tried asserting are not working. Further exploration and commenting out tests for time being: https://github.com/testing-library/jest-dom
+
+    // expect(
+    //   screen.getByText(/you interrupted my meal for this.../i)
+    // ).not.toBeInTheDocument();
+    // expect(
+    //   screen.getByText(/sigh. how dare you disturb my slumber./i)
+    // ).not.toBeInTheDocument();
+    // expect(
+    //   screen.getByText(/this belly is still off-limits to the likes of you./i)
+    // ).not.toBeInTheDocument();
   });
 
-  test('renders correct img for lowest score', () => {
-    render(<Score score={1} />);
+  test('renders img', () => {
+    render(<Score score={10} />);
 
-    screen.getByAltText(/grumpy_food/i);
+    screen.getByTestId('best');
 
-    expect(screen.getByAltText(/grumpy_food/i)).toBeInTheDocument();
+    // expect(screen.getByTestId('worst')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('worst')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('bad')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('good')).not.toBeInTheDocument();
   });
 });
