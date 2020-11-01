@@ -50,8 +50,9 @@ export default function Welcome({ playGame }) {
             <Grid item xs={12}>
               <Typography component="p" className={classes.type}>
                 Grumpy cat is a tough critic. You're gonna have work really hard
-                to earn his respect. You're only 10 questions away from proving
-                you can maybe rub his belly...but don't count on it.
+                to earn her respect. Your challenge is to get 10 tricky trivia
+                questions right... and MAYBE she'll let you rub her belly. But
+                don't count on it.
               </Typography>
             </Grid>
             <Grid item xs={12} className={classes.type}>

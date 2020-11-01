@@ -1,10 +1,28 @@
-# Proxy server for local development
+# Getting Started with Impress Me Human.
+
+Never thought you'd have to go this far for the love and attention of a cat, but here you are. Use your mighty brain to answer tough trivia questions and impress perpetual grump, Tardar Sauce, who took the world by storm as Grumpy Cat. RIP. For a demo of the app, you can visit DEPLOYED SITE.
+
+## Local Development
+
+- To create your own copy, fork and clone this repo to your machine.\
+- CD into the project directory in your terminal.\
+- Open your editor of choice and run the following `npm install` to install project dependencies.\
+- `npm start` will run the app and server concurrently in the development mode.\
+  Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- `npm test` launches the test runner in the interactive watch mode.\
+- `npm run build` builds the app for production to the `build` folder.\
+
+If more information regarding the test & build scripts is needed, it can be found on [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+### Proxy Server
 
 The package.json is set up with a proxy server to so webpack's dev server can connect the express server. Please note, if the port is changed in server.js, the port must also be changed in package.json "proxy".
 
-# Getting Started with Tandem Trivia
+##Built With
 
-For a demo of Tandem Trivia, you can visit DEPLOYED SITE.
+- Node.js
+- React
+- Express
 
 ## Dependencies Added With NPM
 
@@ -14,70 +32,4 @@ For a demo of Tandem Trivia, you can visit DEPLOYED SITE.
 - [nodemon](https://nodemon.io/) - utility to monitor for changes in source & restart server automatically
 - [axios](https://www.npmjs.com/package/axios)
 - [Material UI](https://material-ui.com/) for styling purposes
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app and server concurrently in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [react-testing-library](https://testing-library.com/docs/intro) included with create-react-app for testing

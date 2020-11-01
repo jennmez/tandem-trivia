@@ -1,5 +1,6 @@
 {
   "name": "tandem-trivia",
+  "homepage":"https://jennmez.github.io/tandem-trivia",
   "version": "0.1.0",
   "private": true,
   "main": "server.js",
