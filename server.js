@@ -1,10 +1,14 @@
 //bring in express server and create application
-let express = require('express');
-let app = express();
+const express = require('express');
+const app = express();
 //create server port
-let PORT = 3030;
+const PORT = 3030;
 //retrieve the data from my created route
-let triviaData = require('./routes/trivia');
+const triviaData = require('./routes/trivia');
+const path = require('path');
+
+//static files
+app.use(express.static(path.join(__dirname, 'build')));
 
 //if there is trouble with CORS once I configure the (cross origin resource sharing)
 //npm install cors
