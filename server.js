@@ -10,10 +10,6 @@ const path = require('path');
 //static files
 app.use(express.static(path.join(__dirname, 'build')));
 
-//if there is trouble with CORS once I configure the (cross origin resource sharing)
-//npm install cors
-//let cors = require('cors')
-
 //use the express Router object to create our route
 let router = express.Router();
 
@@ -21,11 +17,12 @@ let router = express.Router();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//configure CORS
-//app.use(cors())
-
-//configure router so all routes are prefixed with /api
+//configure router so routes are prefixed with /api
 app.use('/api', router);
+
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 //create a GET request to gather all the questions
 router.get('/', (req, res, next) => {
@@ -38,6 +35,13 @@ router.get('/', (req, res, next) => {
       next(err);
     }
   );
+});
+
+//404 error handling
+app.use((req, res, next) => {
+  const error = new Error('Not Found');
+  error.status = 404;
+  next(error);
 });
 
 //configure error handling middleware last
