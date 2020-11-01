@@ -46,7 +46,7 @@ app.use(function (err, req, res, next) {
 });
 
 //create server to listen on port 5000
-let server = app.listen(PORT, function () {
+app.listen(PORT, function () {
   console.log(`Node server is running on port ${PORT}`);
 });
 
