@@ -5,10 +5,10 @@ const app = express();
 const PORT = process.env.PORT || 3030;
 //retrieve the data from my created route
 // const triviaData = require('./api/trivia');
-// const path = require('path');
+const path = require('path');
 
 // //static files
-// app.use(express.static(path.join(__dirname, 'build/')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 //use the express Router object to create our route
 // let router = express.Router();
@@ -22,8 +22,11 @@ app.use('/api', require('./api'));
 
 if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
   app.get('/', (req, res) => {
-    res.sendFile('build/index.html', { root: __dirname });
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
+  // app.get('/', (req, res) => {
+  //   res.sendFile('build/index.html', { root: __dirname });
+  // });
 }
 
 //configure error handling middleware last
