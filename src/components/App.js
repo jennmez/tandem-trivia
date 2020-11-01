@@ -17,8 +17,10 @@ function App() {
 
   const fetchTrivia = async () => {
     try {
+      console.log('im in the fetch');
       setIsLoading(true);
       const response = await axios.get('/api');
+      console.log('client found data');
       const { data } = await response;
       shuffle(data);
       addKey(data);
