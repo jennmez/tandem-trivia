@@ -37,12 +37,12 @@ function App() {
 
   return (
     <>
-      {isLoading && <div>loading</div>}
       {!isPlaying && !error ? (
         <Welcome playGame={fetchTrivia} />
       ) : (
         <Trivia triviaQs={questions} resetGame={resetGame} />
       )}
+      {isLoading && <div>loading</div>}
       {error && <ErrorPg />}
     </>
   );

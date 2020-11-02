@@ -8,9 +8,6 @@ const path = require('path');
 // //static files
 app.use(express.static(path.join(__dirname, 'build')));
 
-//use the express Router object to create our route
-// let router = express.Router();
-
 //configure middleware to support JSON data parsing from client requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -23,9 +20,6 @@ if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
   app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
-  // app.get('/', (req, res) => {
-  //   res.sendFile('build/index.html', { root: __dirname });
-  // });
 }
 
 //configure error handling middleware last

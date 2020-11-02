@@ -49,7 +49,7 @@ export default function Welcome({ playGame }) {
             </Grid>
             <Grid item xs={12}>
               <Typography component="p" className={classes.type}>
-                Grumpy cat is a tough critic. You're gonna have work really hard
+                Grumpy Cat is a tough critic. You're gonna have work really hard
                 to earn her respect. Your challenge is to get 10 tricky trivia
                 questions right... and MAYBE she'll let you rub her belly. But
                 don't count on it.
@@ -61,6 +61,7 @@ export default function Welcome({ playGame }) {
                 color="primary"
                 onClick={playGame}
                 className={classes.button}
+                data-testid="play game"
               >
                 PLAY
               </Button>

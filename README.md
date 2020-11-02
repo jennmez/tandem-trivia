@@ -1,24 +1,28 @@
 # Getting Started with Impress Me Human.
 
-Never thought you'd have to go this far for the love and attention of a cat, but here you are. Use your mighty brain to answer tough trivia questions and impress perpetual grump, Tardar Sauce, who took the world by storm as Grumpy Cat. RIP. For a demo of the app, you can visit DEPLOYED SITE.
+Never thought you'd have to go this far for the love and attention of a cat, but here you are. Use your mighty brain to answer tough trivia questions and impress perpetual grump, Tardar Sauce, who took the world by storm as Grumpy Cat. RIP.
+
+[DEMO](https://impressgrump.herokuapp.com/)
 
 ## Local Development
 
 - To create your own copy, fork and clone this repo to your machine.
 - CD into the project directory in your terminal.
 - Open your editor of choice and run the following `npm install` to install project dependencies.
-- `npm start` will run the app and server concurrently in the development mode.
+- `npm run start` will run the app and server concurrently in the development mode.
   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-- `npm test` launches the test runner in the interactive watch mode.
-- `npm run deploy` will launch the predeploy script first and builds the app for production to the `build` folder. Before running the scripte, you will have to set your domain in the "homepage" field in the package.json file. For example: "homepage": "https://myusername.github.io/my-app". If you decide publish to GitHub pages like me, make sure GitHub Pages option in your GitHub project settings is set to use the gh-pages branch.
-
-If more information regarding the test & build scripts is needed, it can be found on [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `npm run test` launches the test runner in the interactive watch mode.
+- `npm run build` will build a minified production-ready bundle for deployment.
 
 ### Proxy Server
 
 The package.json is set up with a proxy server to so webpack's dev server can connect the express server. Please note, if the port is changed in server.js, the port must also be changed in package.json "proxy".
 
-##Built With
+## Deployment
+
+This app was deployed to Heroku for hosting and is recommended. If you deploy with Heroku, you will need to [sign up](https://devcenter.heroku.com/start) for an account if you do not have one. Follow their guid
+
+## Built With
 
 - Node.js
 - React
