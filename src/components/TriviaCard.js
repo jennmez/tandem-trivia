@@ -56,7 +56,7 @@ export default function TriviaCard(props) {
     } else if (trivia.incorrect.includes(value)) {
       setDisableSubmitButton(!disabledSubmitButton);
       setDisableNextButton(!disabledNextButton);
-      setHelperText(`Nope.`);
+      setHelperText(`Wah-wah. The correct answer is ${trivia.correct}.`);
       setError(true);
     } else {
       setHelperText(`C'mon, I don't have all day. Choose an answer.`);
