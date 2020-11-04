@@ -22,6 +22,11 @@ if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
   });
 }
 
+//setting up the a ping service so my app will stay active on heroku
+app.get('/hello', (req, res) => {
+  return res.send('Hello');
+});
+
 //configure error handling middleware last
 app.use(function (err, req, res, next) {
   console.error(err);
